@@ -10,7 +10,9 @@
 #
 
 FactoryBot.define do
-  factory :medium do
-    
+  factory :medium, class: 'Media' do
+    media_type { :image }
+    name {'test_image_name_1'}
+    association :article
   end
 end
