@@ -1,4 +1,5 @@
 module MediumDecorator
+  # Rubyの分岐がわからない
   def image_url(version = :origin)
     return nil if !image? || !attachment.attached? || attachment.metadata.blank?
 
