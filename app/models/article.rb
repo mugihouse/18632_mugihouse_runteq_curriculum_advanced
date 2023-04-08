@@ -32,7 +32,11 @@ class Article < ApplicationRecord
 
   has_many :article_tags
   has_many :tags, through: :article_tags
+  # orderで順番を指定できる
   has_many :article_blocks, -> { order(:level) }, inverse_of: :article
+  # has_many~through の中間テーブルがpolymophicな場合
+  # source
+  # source_type→モデルを設定
   has_many :sentences, through: :article_blocks, source: :blockable, source_type: 'Sentence'
   has_many :media, through: :article_blocks, source: :blockable, source_type: 'Medium'
   has_many :embeds, through: :article_blocks, source: :blockable, source_type: 'Embed'
