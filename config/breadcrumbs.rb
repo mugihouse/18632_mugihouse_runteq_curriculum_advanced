@@ -96,3 +96,8 @@ crumb :admin_tags do
   link 'タグ', admin_tags_path
   parent :admin_dashboard
 end
+
+crumb :edit_admin_tag do |tag|
+  link 'タグ編集', edit_admin_tag(tag)
+  parent :admin_tags
+end
