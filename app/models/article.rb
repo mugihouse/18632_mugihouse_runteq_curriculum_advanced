@@ -76,8 +76,7 @@ class Article < ApplicationRecord
                   sentence = article_block.blockable
                   sentence.body ||= ''
                 elsif article_block.medium?
-                  medium = ActiveDecorator::
-                  instance.decorate(article_block.blockable)
+                  medium = ActiveDecorator::Decorator.instance.decorate(article_block.blockable)
                   controller.render_to_string("shared/_media_#{medium.media_type}", locals: { medium: medium }, layout: false)
                 elsif article_block.embed?
                   embed = ActiveDecorator::Decorator.instance.decorate(article_block.blockable)
