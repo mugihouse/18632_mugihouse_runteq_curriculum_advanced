@@ -33,8 +33,6 @@ rescue ActiveRecord::PendingMigrationError => e
   exit 1
 end
 RSpec.configure do |config|
-  config.include FactoryBot::Syntax::Methods
-  config.include LoginMacros
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
@@ -62,4 +60,10 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
+  # FactoryBotの省略
+  config.include FactoryBot::Syntax::Methods
+
+  # spec/support/ 配下のモジュールを読み込む
+  config.include LoginMacros
 end

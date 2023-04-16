@@ -18,8 +18,7 @@
 #
 
 FactoryBot.define do
-  factory :article_block, class: 'ArticleBlock' do
-    association :blockable, factory: :medium
-    level { 0 }
+  factory :article_block do
+    
   end
 end

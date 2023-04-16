@@ -18,24 +18,23 @@
 
 FactoryBot.define do
   factory :user do
-    sequence(:name) { |n| "user_#{n}" }
+    sequence(:name) { |n| "admin-#{n}" }
     password { 'password' }
     password_confirmation { 'password' }
-    # default値を入れるのが望ましい
-    role { :writer }
+    role { :admin }
 
     trait :admin do
-      sequence(:name) { |n| "admin_#{n}"}
+      sequence(:name) { |n| "admin-#{n}" }
       role { :admin }
     end
 
     trait :editor do
-      sequence(:name) { |n| "editor_#{n}" }
+      sequence(:name) { |n| "editor-#{n}" }
       role { :editor }
     end
 
     trait :writer do
-      sequence(:name) { |n| "writer_#{n}" }
+      sequence(:name) { |n| "writer-#{n}" }
       role { :writer }
     end
   end
