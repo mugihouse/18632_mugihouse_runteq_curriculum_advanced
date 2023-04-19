@@ -66,6 +66,7 @@ class Article < ApplicationRecord
   scope :viewable, -> { published.where('published_at < ?', Time.current) }
   scope :new_arrivals, -> { viewable.order(published_at: :desc) }
   scope :by_category, ->(category_id) { where(category_id: category_id) }
+  scope :by_author, ->(author_id) { where(author_id: author_id) }
   scope :title_contain, ->(word) { where('title LIKE ?', "%#{word}%") }
   scope :past_published, -> { where('published_at <= ?', Time.current) }
 
