@@ -12,6 +12,7 @@ Rails.application.configure do
   # Do not eager load code on boot.
   config.eager_load = false
 
+  # エラー画面404と403をデバッグ用か本番用か切り替えられる
   # Show full error reports.
   config.consider_all_requests_local = true
 
