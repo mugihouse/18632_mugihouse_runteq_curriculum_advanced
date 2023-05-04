@@ -4,6 +4,7 @@ class TaxonomyPolicy < ApplicationPolicy
   end
 
   def create?
+    true
   end
 
   def update?
