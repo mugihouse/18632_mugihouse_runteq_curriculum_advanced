@@ -5,10 +5,8 @@ module ArticleBlockDecorator
     elsif medium?
       '<i class="fa fa-image"></i>'.html_safe
     # youtubeとtwitterの分岐
-    elsif youtube?
-      '<i class="fa fa-youtube-play"></i>'.html_safe
-    elsif twitter?
-      '<i class="fa fa-twitter"></i>'.html_safe
+    elsif embed?
+      blockable.youtube? ? '<i class="fa fa-youtube-play"></i>'.html_safe : '<i class="fa fa-twitter"></i>'.html_safe      # 三項演算子を使ってスッキリ書く
     end
   end
 
