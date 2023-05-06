@@ -54,6 +54,14 @@ class ArticleBlock < ApplicationRecord
     blockable.is_a?(Embed)
   end
 
+  def youtube?
+    return blockable.embed_type == "youtube"
+  end
+
+  def twitter?
+    return blockable.embed_type == "twitter"
+  end
+
   def insert_and_save!
     # levelをずらす
     article_blocks = article.article_blocks.where('level >= ?', level).reorder(level: :desc)
