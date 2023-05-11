@@ -15,6 +15,12 @@
 
  @import 'swiper/swiper-bundle';
 
+.swiper {
+  width: 600px;
+  height: 300px;
+  object-fit: cover;
+}
+
 .jumbotron {
   background: url('/images/cover.jpg') center / cover;
   color: white;
