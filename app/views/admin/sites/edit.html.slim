@@ -16,7 +16,7 @@
         = image_tag @site.favicon_url('32x32')
         br
         br
-        = link_to '削除', admin_site_attachment_path(@site.favicon.id), class: 'btn btn-danger', method: :delete, data: { confirm: "faviconを削除してもよろしいですか？" }
+        = link_to '削除', admin_site_attachment_path(@site.favicon.id), class: 'btn btn-danger', method: :delete
 
 
       = f.input :og_image, as: :file, hint: 'JPEG/PNG (1200x630)'
@@ -25,7 +25,7 @@
         = image_tag @site.og_image_url(:ogp), class: 'img-responsive'
         br
         br
-        = link_to '削除', admin_site_attachment_path(@site.og_image.id), class: 'btn btn-danger', method: :delete, data: { confirm: "og:imageを削除してもよろしいですか？" }
+        = link_to '削除', admin_site_attachment_path(@site.og_image.id), class: 'btn btn-danger', method: :delete
 
 
       = f.input :main_images, as: :file, hint: 'JPEG/PNG (1200x400)', input_html: { multiple: true }
@@ -36,7 +36,7 @@
             .main_image
               = image_tag main_image.variant(resize: '300x100').processed
               br
-              = link_to '削除', admin_site_attachment_path(main_image.id), class: 'btn btn-danger', method: :delete, data: { confirm: "main:imageを削除してもよろしいですか？" }
+              = link_to '削除', admin_site_attachment_path(main_image.id), class: 'btn btn-danger', method: :delete
 
     .box-footer
       = f.button :submit, '保存', class: %w[btn btn-primary]
