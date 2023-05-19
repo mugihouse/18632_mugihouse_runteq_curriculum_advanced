@@ -1,3 +1,5 @@
+require 'active_support/core_ext/integer/time'
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -60,4 +62,10 @@ Rails.application.configure do
 
   # Storage
   config.active_storage.service = :local
+
+   # Default url for mailer
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  # 下記を追加
+  config.action_mailer.delivery_method = :letter_opener_web
 end
