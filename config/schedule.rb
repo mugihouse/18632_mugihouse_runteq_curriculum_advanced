@@ -14,3 +14,7 @@ set :output, "#{Rails.root}/log/cron.log"
 every :hour do
   rake 'article_state:update_article_state'
 end
+
+every 1.day, at: '9:00 am' do
+  rake 'mail_article_summary:mail_summary'
+end
